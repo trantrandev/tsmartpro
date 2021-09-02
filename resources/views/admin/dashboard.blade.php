@@ -552,4 +552,14 @@
         <!-- latest activity end -->
     </div>
 </div>
+<!-- Chart js -->
+<script type="text/javascript" src="{{ asset('bower_components/chart.js/js/Chart.js') }}"></script>
+<!-- gauge js biểu đồ -->
+<script src="{{ asset('pages/widget/gauge/gauge.min.js') }}"></script>
+<script src="{{ asset('pages/widget/amchart/amcharts.js') }}"></script>
+<script src="{{ asset('pages/widget/amchart/serial.js') }}"></script>
+<script src="{{ asset('pages/widget/amchart/gauge.js') }}"></script>
+<script src="{{ asset('pages/widget/amchart/pie.js') }}"></script>
+<script src="{{ asset('pages/widget/amchart/light.js') }}"></script>
+<script type="text/javascript" src="{{ asset('pages/dashboard/crm-dashboard.min.js') }}"></script>
 @endsection

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,22 +15,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth'])->name('dashboard');
 require __DIR__.'/auth.php';
 
-Route::get('dashboard', [DashboardController::class, 'show'])->middleware(['auth']);
+Route::get('dashboard', [DashboardController::class, 'show'])->middleware(['auth'])->name('dashboard');
+Route::get('admin', [DashboardController::class, 'show'])->middleware(['auth'])->name('dashboard');
 //LOGOUT
 Route::get('logout', function ()
 {
     auth()->logout();
     Session()->flush();
-
     return Redirect::to('/');
 })->name('logout');
+
+Route::get('admin/user/list', [AdminUserController::class, 'show'])->name('user.list');
