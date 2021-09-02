@@ -1,4 +1,8 @@
 @extends('layouts.admin')
+@section('add_css')
+<!-- radial chart.css -->
+<link rel="stylesheet" href="{{ asset('pages/chart/radial/css/radial.css') }}" type="text/css" media="all">
+@endsection
 @section('content')
 <div class="pcoded-inner-content">
     <div class="main-body">

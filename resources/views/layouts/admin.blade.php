@@ -25,14 +25,14 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
     <!-- Required Fremwork -->
     <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/bootstrap/css/bootstrap.min.css') }}">
-    <!-- radial chart.css -->
-    <link rel="stylesheet" href="{{ asset('pages/chart/radial/css/radial.css') }}" type="text/css" media="all">
+    
     <!-- feather Awesome -->
     <link rel="stylesheet" type="text/css" href="{{ asset('icon/feather/css/feather.css') }}">
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery.mCustomScrollbar.css') }}">
     @endif
+    @yield('add_css')
     {{-- jquery --}}
     <script type="text/javascript" src="{{ asset('bower_components/jquery/js/jquery.min.js') }}"></script>
 </head>
@@ -306,74 +306,30 @@
 </div>
 </div>
 
-<!-- Warning Section Starts -->
-<!-- Older IE warning message -->
-    <!--[if lt IE 10]>
-<div class="ie-warning">
-    <h1>Warning!!</h1>
-    <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
-    <div class="iew-container">
-        <ul class="iew-download">
-            <li>
-                <a href="http://www.google.com/chrome/">
-                    <img src="{{ asset('images/browser/chrome') }}.png" alt="Chrome">
-                    <div>Chrome</div>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.mozilla.org/en-US/firefox/new/">
-                    <img src="{{ asset('images/browser/firefox') }}.png" alt="Firefox">
-                    <div>Firefox</div>
-                </a>
-            </li>
-            <li>
-                <a href="http://www.opera.com">
-                    <img src="{{ asset('images/browser/opera') }}.png" alt="Opera">
-                    <div>Opera</div>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.apple.com/safari/">
-                    <img src="{{ asset('images/browser/safari') }}.png" alt="Safari">
-                    <div>Safari</div>
-                </a>
-            </li>
-            <li>
-                <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-                    <img src="{{ asset('images/browser/ie') }}.png" alt="">
-                    <div>IE (9 & above)</div>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <p>Sorry for the inconvenience!</p>
-</div>
-<![endif]-->
-    <!-- Warning Section Ends -->
-    <!-- Required Jquery -->
-    <script type="text/javascript" src="{{ asset('bower_components/jquery-ui/js/jquery-ui.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('bower_components/popper.js/js/popper.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('bower_components/bootstrap/js/bootstrap.min.js') }}"></script>
-    <!-- jquery slimscroll js -->
-    <script type="text/javascript" src="{{ asset('bower_components/jquery-slimscroll/js/jquery.slimscroll.js') }}"></script>
-    <!-- modernizr js -->
-    <script type="text/javascript" src="{{ asset('bower_components/modernizr/js/modernizr.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('bower_components/modernizr/js/css-scrollbars.js') }}"></script>
+<!-- Required Jquery -->
+<script type="text/javascript" src="{{ asset('bower_components/jquery-ui/js/jquery-ui.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bower_components/popper.js/js/popper.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bower_components/bootstrap/js/bootstrap.min.js') }}"></script>
+<!-- jquery slimscroll js -->
+<script type="text/javascript" src="{{ asset('bower_components/jquery-slimscroll/js/jquery.slimscroll.js') }}"></script>
+<!-- modernizr js -->
+<script type="text/javascript" src="{{ asset('bower_components/modernizr/js/modernizr.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bower_components/modernizr/js/css-scrollbars.js') }}"></script>
 
-    <!-- Custom js -->
-    <script src="{{ asset('js/pcoded.min.js') }}"></script>
-    <script src="{{ asset('js/vartical-layout.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.mCustomScrollbar.concat.min.js') }}"></script>    
-    <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+<!-- Custom js -->
+<script src="{{ asset('js/pcoded.min.js') }}"></script>
+<script src="{{ asset('js/vartical-layout.min.js') }}"></script>
+<script src="{{ asset('js/jquery.mCustomScrollbar.concat.min.js') }}"></script>    
+<script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-      gtag('config', 'UA-23581568-13');
-  </script>
+  gtag('config', 'UA-23581568-13');
+</script>
 </body>
 
 </html>

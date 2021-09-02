@@ -128,12 +128,12 @@
                 <ul class="pcoded-submenu">
                     <li class="{{ Route::is('user.list')?'active':null }}">
                         <a  href="{{ url('admin/user/list') }}">
-                            <span class="pcoded-mtext">List user</span>
+                            <span class="pcoded-mtext">User list</span>
                         </a>
                     </li>                                     
                     <li class="{{ Route::is('user.add')?'active':null }}">
                         <a  href="{{ url('admin/user/add') }}">
-                            <span class="pcoded-mtext">Add user</span>
+                            <span class="pcoded-mtext">User add</span>
                         </a>
                     </li>                                     
                 </ul>
