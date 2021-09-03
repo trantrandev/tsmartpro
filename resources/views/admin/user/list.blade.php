@@ -43,16 +43,32 @@
 						<div class="card">
 							<div class="card-header">
 								<h5>List user</h5>
-								<button type="button" class="btn btn-primary waves-effect waves-light f-right d-inline-block md-trigger" data-modal="modal-13"> <i class="icofont icofont-plus m-r-5"></i> Add User
-								</button>
+								<a href="{{ url('admin/user/add') }}" type="button" class="btn btn-primary waves-effect waves-light f-right d-inline-block md-trigger" data-modal="modal-13"> <i class="feather icon-plus m-r-5"></i> Add User
+								</a>
+							</div>
+							<div class="card-block pb-0">
+								<div class="analytic">
+									<a href="http://localhost/storeESmart/admin/user/list?status=all" class="text-primary">All<span class="text-muted"> (1) |</span></a>
+									<a href="http://localhost/storeESmart/admin/user/list?status=active" class="text-primary">Active<span class="text-muted"> (1) |</span></a>
+									<a href="http://localhost/storeESmart/admin/user/list?status=trash" class="text-primary">Inactive<span class="text-muted"> (2) </span></a>
+								</div>
+								<div class="form-action form-inline pt-3"> 
+									<select class="form-control form-control-sm mr-1" name="act" id="">
+										<option>Choose</option>
+										<option value="delete">Temporatary delete</option>
+									</select>
+									<input type="submit" name="btn-search" value="Áp dụng" class="btn btn-sm btn-primary">
+								</div>
+
 							</div>
 							<div class="card-block">
 								<div class="dt-responsive table-responsive">
-									<table id="simpletable" class="table table-striped table-bordered nowrap">
+									<table id="list-user" class="table table-striped table-bordered nowrap table-checkall">
 										<thead>
 											<tr>
+												<th><input type="checkbox" name="checkall"></th>
+												<th class="text-center">Avatar</th>
 												<th>Name</th>
-												<th>Avatar</th>
 												<th>Email</th>
 												<th>Created date</th>
 												<th>Status</th>
@@ -61,18 +77,23 @@
 											</tr>
 										</thead>
 										<tbody>
+											@foreach ($users as $user)
 											<tr>
-												<td>Tiger Nixon</td>
-												<td>System Architect</td>
-												<td>trantrandev@gmail.com</td>
-												<td>29/12/1998 12:21:12</td>
-												<td>show</td>
+												<td><input type="checkbox"></td>
+												<td class="text-center"><img src="{{ asset('images/avatar.png') }}" class="img-fluid" style="max-width: 75px;" alt=""></td>
+												<td>{{ $user->name }}</td>
+												<td>{{ $user->email }}</td>
+												<td>{{ $user->created_at }}</td>
+												<td>
+													{!! show_status_user($user->status) !!}
+												</td>												 
 												<td>administrator</td>
 												<td class="text-center">
 													<a href="#" class="p-1"><i class="feather icon-edit-1"  style="font-size:16px; color: #2196f3;"></i></a>
 													<a href="#" class="p-1"><i class="feather icon-trash-2" onclick='return confirm("Are you sure to want to delete it?")' style="font-size:16px;  color:red"></i></a>
 												</td>
 											</tr> 
+											@endforeach
 										</tbody>
 									</table>
 								</div>
@@ -86,6 +107,7 @@
 	</div>
 	<!-- Main-body end -->
 </div>
+
 
 <!-- data-table js -->
 <script src="{{ asset('bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>

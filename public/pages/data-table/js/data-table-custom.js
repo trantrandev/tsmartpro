@@ -14,34 +14,34 @@ $(document).ready(function() {
     var table = $('#dt-plugin-method').DataTable();
 
     $('<button class="btn btn-primary  m-b-20">sum of age in all rows</button>')
-        .prependTo('.dt-plugin-buttons')
-        .on('click', function() {
-            alert('Column sum is: ' + table.column(3).data().sum());
-        });
+    .prependTo('.dt-plugin-buttons')
+    .on('click', function() {
+        alert('Column sum is: ' + table.column(3).data().sum());
+    });
 
     $('<button class="btn btn-primary m-r-10 m-b-20">sum of  age of visible rows</button>')
-        .prependTo('.dt-plugin-buttons')
-        .on('click', function() {
-            alert('Column sum is: ' + table.column(3, { page: 'current' }).data().sum());
-        });
+    .prependTo('.dt-plugin-buttons')
+    .on('click', function() {
+        alert('Column sum is: ' + table.column(3, { page: 'current' }).data().sum());
+    });
 
 
     $.fn.dataTable.ext.type.detect.unshift(
         function(d) {
             return d === 'Low' || d === 'Medium' || d === 'High' ?
-                'salary-grade' :
-                null;
+            'salary-grade' :
+            null;
         }
-    );
+        );
 
     $.fn.dataTable.ext.type.order['salary-grade-pre'] = function(d) {
         switch (d) {
             case 'Low':
-                return 1;
+            return 1;
             case 'Medium':
-                return 2;
+            return 2;
             case 'High':
-                return 3;
+            return 3;
         }
         return 0;
     };
@@ -59,9 +59,9 @@ $(document).ready(function() {
                 (min <= age && isNaN(max)) ||
                 (min <= age && age <= max)) {
                 return true;
-            }
-            return false;
         }
+        return false;
+    }
     );
 
     var dtage = $('#dt-range').DataTable();
@@ -103,10 +103,10 @@ $(document).ready(function() {
     $(document).ready(function() {
         $('#dt-live-dom').DataTable({
             "columns": [
-                null,
-                { "orderDataType": "dom-text-numeric" },
-                { "orderDataType": "dom-text", type: 'string' },
-                { "orderDataType": "dom-select" }
+            null,
+            { "orderDataType": "dom-text-numeric" },
+            { "orderDataType": "dom-text", type: 'string' },
+            { "orderDataType": "dom-select" }
             ]
         });
     });
@@ -120,12 +120,12 @@ $(document).ready(function() {
         "serverSide": true,
         "ajax": "dt-json-data/scripts/server-processing.php",
         "columns": [
-            { "data": "first_name" },
-            { "data": "last_name" },
-            { "data": "position" },
-            { "data": "office" },
-            { "data": "start_date" },
-            { "data": "salary" }
+        { "data": "first_name" },
+        { "data": "last_name" },
+        { "data": "position" },
+        { "data": "office" },
+        { "data": "start_date" },
+        { "data": "salary" }
         ]
     });
 
@@ -141,12 +141,12 @@ $(document).ready(function() {
             }
         },
         "columns": [
-            { "data": "first_name" },
-            { "data": "last_name" },
-            { "data": "position" },
-            { "data": "office" },
-            { "data": "start_date" },
-            { "data": "salary" }
+        { "data": "first_name" },
+        { "data": "last_name" },
+        { "data": "position" },
+        { "data": "office" },
+        { "data": "start_date" },
+        { "data": "salary" }
         ]
     });
 
@@ -158,12 +158,12 @@ $(document).ready(function() {
             type: "post"
         },
         "columns": [
-            { "data": "first_name" },
-            { "data": "last_name" },
-            { "data": "position" },
-            { "data": "office" },
-            { "data": "start_date" },
-            { "data": "salary" }
+        { "data": "first_name" },
+        { "data": "last_name" },
+        { "data": "position" },
+        { "data": "office" },
+        { "data": "start_date" },
+        { "data": "salary" }
         ]
     });
 
@@ -174,39 +174,39 @@ $(document).ready(function() {
     $('#dt-ajax-object').DataTable({
         "ajax": "dt-json-data/objects.txt",
         "columns": [
-            { "data": "name" },
-            { "data": "position" },
-            { "data": "office" },
-            { "data": "extn" },
-            { "data": "start_date" },
-            { "data": "salary" }
+        { "data": "name" },
+        { "data": "position" },
+        { "data": "office" },
+        { "data": "extn" },
+        { "data": "start_date" },
+        { "data": "salary" }
         ]
     });
     $('#dt-nested-object').DataTable({
         "processing": true,
         "ajax": "dt-json-data/objects_deep.txt",
         "columns": [
-            { "data": "name" },
-            { "data": "hr.position" },
-            { "data": "contact.0" },
-            { "data": "contact.1" },
-            { "data": "hr.start_date" },
-            { "data": "hr.salary" }
+        { "data": "name" },
+        { "data": "hr.position" },
+        { "data": "contact.0" },
+        { "data": "contact.1" },
+        { "data": "hr.start_date" },
+        { "data": "hr.salary" }
         ]
     });
     $('#dt-orthogonal').DataTable({
         ajax: "dt-json-data/orthogonal.txt",
         columns: [
-            { data: "name" },
-            { data: "position" },
-            { data: "office" },
-            { data: "extn" }, {
-                data: {
-                    _: "start_date.display",
-                    sort: "start_date.timestamp"
-                }
-            },
-            { data: "salary" }
+        { data: "name" },
+        { data: "position" },
+        { data: "office" },
+        { data: "extn" }, {
+            data: {
+                _: "start_date.display",
+                sort: "start_date.timestamp"
+            }
+        },
+        { data: "salary" }
         ]
     });
     var generatetable = $('#dt-generate-content').DataTable({
@@ -235,52 +235,52 @@ $(document).ready(function() {
 
     // Jsource table start
     var dataSet = [
-        ["Tiger Nixon", "System Architect", "Edinburgh", "5421", "2011/04/25", "$320,800"],
-        ["Garrett Winters", "Accountant", "Tokyo", "8422", "2011/07/25", "$170,750"],
-        ["Ashton Cox", "Junior Technical Author", "San Francisco", "1562", "2009/01/12", "$86,000"],
-        ["Cedric Kelly", "Senior Javascript Developer", "Edinburgh", "6224", "2012/03/29", "$433,060"],
-        ["Airi Satou", "Accountant", "Tokyo", "5407", "2008/11/28", "$162,700"],
-        ["Brielle Williamson", "Integration Specialist", "New York", "4804", "2012/12/02", "$372,000"],
-        ["Herrod Chandler", "Sales Assistant", "San Francisco", "9608", "2012/08/06", "$137,500"],
-        ["Rhona Davidson", "Integration Specialist", "Tokyo", "6200", "2010/10/14", "$327,900"],
-        ["Colleen Hurst", "Javascript Developer", "San Francisco", "2360", "2009/09/15", "$205,500"],
-        ["Sonya Frost", "Software Engineer", "Edinburgh", "1667", "2008/12/13", "$103,600"],
-        ["Jena Gaines", "Office Manager", "London", "3814", "2008/12/19", "$90,560"],
-        ["Quinn Flynn", "Support Lead", "Edinburgh", "9497", "2013/03/03", "$342,000"],
-        ["Charde Marshall", "Regional Director", "San Francisco", "6741", "2008/10/16", "$470,600"],
-        ["Haley Kennedy", "Senior Marketing Designer", "London", "3597", "2012/12/18", "$313,500"],
-        ["Tatyana Fitzpatrick", "Regional Director", "London", "1965", "2010/03/17", "$385,750"],
-        ["Michael Silva", "Marketing Designer", "London", "1581", "2012/11/27", "$198,500"],
-        ["Paul Byrd", "Chief Financial Officer (CFO)", "New York", "3059", "2010/06/09", "$725,000"],
-        ["Gloria Little", "Systems Administrator", "New York", "1721", "2009/04/10", "$237,500"],
-        ["Bradley Greer", "Software Engineer", "London", "2558", "2012/10/13", "$132,000"],
-        ["Dai Rios", "Personnel Lead", "Edinburgh", "2290", "2012/09/26", "$217,500"],
-        ["Jenette Caldwell", "Development Lead", "New York", "1937", "2011/09/03", "$345,000"],
-        ["Yuri Berry", "Chief Marketing Officer (CMO)", "New York", "6154", "2009/06/25", "$675,000"],
-        ["Caesar Vance", "Pre-Sales Support", "New York", "8330", "2011/12/12", "$106,450"],
-        ["Doris Wilder", "Sales Assistant", "Sidney", "3023", "2010/09/20", "$85,600"],
-        ["Angelica Ramos", "Chief Executive Officer (CEO)", "London", "5797", "2009/10/09", "$1,200,000"],
-        ["Gavin Joyce", "Developer", "Edinburgh", "8822", "2010/12/22", "$92,575"],
-        ["Jennifer Chang", "Regional Director", "Singapore", "9239", "2010/11/14", "$357,650"],
-        ["Brenden Wagner", "Software Engineer", "San Francisco", "1314", "2011/06/07", "$206,850"],
-        ["Fiona Green", "Chief Operating Officer (COO)", "San Francisco", "2947", "2010/03/11", "$850,000"],
-        ["Shou Itou", "Regional Marketing", "Tokyo", "8899", "2011/08/14", "$163,000"],
-        ["Michelle House", "Integration Specialist", "Sidney", "2769", "2011/06/02", "$95,400"],
-        ["Suki Burks", "Developer", "London", "6832", "2009/10/22", "$114,500"],
-        ["Prescott Bartlett", "Technical Author", "London", "3606", "2011/05/07", "$145,000"],
-        ["Gavin Cortez", "Team Leader", "San Francisco", "2860", "2008/10/26", "$235,500"],
-        ["Martena Mccray", "Post-Sales support", "Edinburgh", "8240", "2011/03/09", "$324,050"],
-        ["Unity Butler", "Marketing Designer", "San Francisco", "5384", "2009/12/09", "$85,675"]
+    ["Tiger Nixon", "System Architect", "Edinburgh", "5421", "2011/04/25", "$320,800"],
+    ["Garrett Winters", "Accountant", "Tokyo", "8422", "2011/07/25", "$170,750"],
+    ["Ashton Cox", "Junior Technical Author", "San Francisco", "1562", "2009/01/12", "$86,000"],
+    ["Cedric Kelly", "Senior Javascript Developer", "Edinburgh", "6224", "2012/03/29", "$433,060"],
+    ["Airi Satou", "Accountant", "Tokyo", "5407", "2008/11/28", "$162,700"],
+    ["Brielle Williamson", "Integration Specialist", "New York", "4804", "2012/12/02", "$372,000"],
+    ["Herrod Chandler", "Sales Assistant", "San Francisco", "9608", "2012/08/06", "$137,500"],
+    ["Rhona Davidson", "Integration Specialist", "Tokyo", "6200", "2010/10/14", "$327,900"],
+    ["Colleen Hurst", "Javascript Developer", "San Francisco", "2360", "2009/09/15", "$205,500"],
+    ["Sonya Frost", "Software Engineer", "Edinburgh", "1667", "2008/12/13", "$103,600"],
+    ["Jena Gaines", "Office Manager", "London", "3814", "2008/12/19", "$90,560"],
+    ["Quinn Flynn", "Support Lead", "Edinburgh", "9497", "2013/03/03", "$342,000"],
+    ["Charde Marshall", "Regional Director", "San Francisco", "6741", "2008/10/16", "$470,600"],
+    ["Haley Kennedy", "Senior Marketing Designer", "London", "3597", "2012/12/18", "$313,500"],
+    ["Tatyana Fitzpatrick", "Regional Director", "London", "1965", "2010/03/17", "$385,750"],
+    ["Michael Silva", "Marketing Designer", "London", "1581", "2012/11/27", "$198,500"],
+    ["Paul Byrd", "Chief Financial Officer (CFO)", "New York", "3059", "2010/06/09", "$725,000"],
+    ["Gloria Little", "Systems Administrator", "New York", "1721", "2009/04/10", "$237,500"],
+    ["Bradley Greer", "Software Engineer", "London", "2558", "2012/10/13", "$132,000"],
+    ["Dai Rios", "Personnel Lead", "Edinburgh", "2290", "2012/09/26", "$217,500"],
+    ["Jenette Caldwell", "Development Lead", "New York", "1937", "2011/09/03", "$345,000"],
+    ["Yuri Berry", "Chief Marketing Officer (CMO)", "New York", "6154", "2009/06/25", "$675,000"],
+    ["Caesar Vance", "Pre-Sales Support", "New York", "8330", "2011/12/12", "$106,450"],
+    ["Doris Wilder", "Sales Assistant", "Sidney", "3023", "2010/09/20", "$85,600"],
+    ["Angelica Ramos", "Chief Executive Officer (CEO)", "London", "5797", "2009/10/09", "$1,200,000"],
+    ["Gavin Joyce", "Developer", "Edinburgh", "8822", "2010/12/22", "$92,575"],
+    ["Jennifer Chang", "Regional Director", "Singapore", "9239", "2010/11/14", "$357,650"],
+    ["Brenden Wagner", "Software Engineer", "San Francisco", "1314", "2011/06/07", "$206,850"],
+    ["Fiona Green", "Chief Operating Officer (COO)", "San Francisco", "2947", "2010/03/11", "$850,000"],
+    ["Shou Itou", "Regional Marketing", "Tokyo", "8899", "2011/08/14", "$163,000"],
+    ["Michelle House", "Integration Specialist", "Sidney", "2769", "2011/06/02", "$95,400"],
+    ["Suki Burks", "Developer", "London", "6832", "2009/10/22", "$114,500"],
+    ["Prescott Bartlett", "Technical Author", "London", "3606", "2011/05/07", "$145,000"],
+    ["Gavin Cortez", "Team Leader", "San Francisco", "2860", "2008/10/26", "$235,500"],
+    ["Martena Mccray", "Post-Sales support", "Edinburgh", "8240", "2011/03/09", "$324,050"],
+    ["Unity Butler", "Marketing Designer", "San Francisco", "5384", "2009/12/09", "$85,675"]
     ];
     $('#jsource-table').DataTable({
         data: dataSet,
         columns: [
-            { title: "Name" },
-            { title: "Position" },
-            { title: "Office" },
-            { title: "Extn." },
-            { title: "Start date" },
-            { title: "Salary" }
+        { title: "Name" },
+        { title: "Position" },
+        { title: "Office" },
+        { title: "Extn." },
+        { title: "Start date" },
+        { title: "Salary" }
         ]
     });
     // Jsource table end
@@ -305,7 +305,7 @@ $(document).ready(function() {
             counter + '.3',
             counter + '.4',
             counter + '.5'
-        ]).draw(false);
+            ]).draw(false);
 
         counter++;
     });
@@ -329,8 +329,8 @@ $(document).ready(function() {
         $('input', this.footer()).on('keyup change', function() {
             if (that.search() !== this.value) {
                 that
-                    .search(this.value)
-                    .draw();
+                .search(this.value)
+                .draw();
             }
         });
     });
@@ -340,16 +340,16 @@ $(document).ready(function() {
             this.api().columns().every(function() {
                 var column = this;
                 var select = $('<select class="form-control form-control-sm"><option value=""></option></select>')
-                    .appendTo($(column.footer()).empty())
-                    .on('change', function() {
-                        var val = $.fn.dataTable.util.escapeRegex(
-                            $(this).val()
+                .appendTo($(column.footer()).empty())
+                .on('change', function() {
+                    var val = $.fn.dataTable.util.escapeRegex(
+                        $(this).val()
                         );
 
-                        column
-                            .search(val ? '^' + val + '$' : '', true, false)
-                            .draw();
-                    });
+                    column
+                    .search(val ? '^' + val + '$' : '', true, false)
+                    .draw();
+                });
 
                 column.data().unique().sort().each(function(d, j) {
                     select.append('<option value="' + d + '">' + d + '</option>')
@@ -389,36 +389,36 @@ $(document).ready(function() {
     function format(d) {
         // `d` is the original data object for the row
         return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">' +
-            '<tr>' +
-            '<td>Full name:</td>' +
-            '<td>' + d.name + '</td>' +
-            '</tr>' +
-            '<tr>' +
-            '<td>Extension number:</td>' +
-            '<td>' + d.extn + '</td>' +
-            '</tr>' +
-            '<tr>' +
-            '<td>Extra info:</td>' +
-            '<td>And any further details here (images etc)...</td>' +
-            '</tr>' +
-            '</table>';
+        '<tr>' +
+        '<td>Full name:</td>' +
+        '<td>' + d.name + '</td>' +
+        '</tr>' +
+        '<tr>' +
+        '<td>Extension number:</td>' +
+        '<td>' + d.extn + '</td>' +
+        '</tr>' +
+        '<tr>' +
+        '<td>Extra info:</td>' +
+        '<td>And any further details here (images etc)...</td>' +
+        '</tr>' +
+        '</table>';
     }
 
     var ct = $('#child-table').DataTable({
         "ajax": "dt-json-data/ajax-child-rows.json",
         "columns": [{
-                "className": 'details-control',
-                "orderable": false,
-                "data": null,
-                "defaultContent": ''
-            },
-            { "data": "name" },
-            { "data": "position" },
-            { "data": "office" },
-            { "data": "salary" }
+            "className": 'details-control',
+            "orderable": false,
+            "data": null,
+            "defaultContent": ''
+        },
+        { "data": "name" },
+        { "data": "position" },
+        { "data": "office" },
+        { "data": "salary" }
         ],
         "order": [
-            [1, 'asc']
+        [1, 'asc']
         ]
     });
 
@@ -446,7 +446,7 @@ $(document).ready(function() {
         alert(
             "The following data would have been submitted to the server: \n\n" +
             data.substr(0, 120) + '...'
-        );
+            );
         return false;
     });
     // Form input end
@@ -473,7 +473,7 @@ $(document).ready(function() {
             $('#global_filter').val(),
             $('#global_regex').prop('checked'),
             $('#global_smart').prop('checked')
-        ).draw();
+            ).draw();
     }
 
     function filterColumn(i) {
@@ -481,7 +481,7 @@ $(document).ready(function() {
             $('#col' + i + '_filter').val(),
             $('#col' + i + '_regex').prop('checked'),
             $('#col' + i + '_smart').prop('checked')
-        ).draw();
+            ).draw();
     }
     $('#search-api').DataTable();
 
@@ -503,11 +503,12 @@ $(document).ready(function() {
     // Styling js end
 
 
-    $('#simpletable').DataTable();
+    $('#list-user').DataTable();
+
 
     $('#order-table').DataTable({
         "order": [
-            [3, "desc"]
+        [3, "desc"]
         ]
     });
 
@@ -571,8 +572,8 @@ $(document).ready(function() {
                 "targets": 0
             },
             { "visible": false, "targets": [3] }
-        ]
-    });
+            ]
+        });
 
     $('#multi-table').DataTable({
         "dom": '<"top"iflp<"clear">>rt<"bottom"iflp<"clear">>'
@@ -600,10 +601,10 @@ $(document).ready(function() {
 
     var table = $('#row-grouping').DataTable({
         "columnDefs": [
-            { "visible": false, "targets": 2 }
+        { "visible": false, "targets": 2 }
         ],
         "order": [
-            [2, 'asc']
+        [2, 'asc']
         ],
         "displayLength": 25,
         "drawCallback": function(settings) {
@@ -615,7 +616,7 @@ $(document).ready(function() {
                 if (last !== group) {
                     $(rows).eq(i).before(
                         '<tr class="group"><td colspan="5">' + group + '</td></tr>'
-                    );
+                        );
 
                     last = group;
                 }
@@ -637,36 +638,36 @@ $(document).ready(function() {
     $('#footer-callback').DataTable({
         "footerCallback": function(row, data, start, end, display) {
             var api = this.api(),
-                data;
+            data;
 
             // Remove the formatting to get integer data for summation
             var intVal = function(i) {
                 return typeof i === 'string' ?
-                    i.replace(/[\$,]/g, '') * 1 :
-                    typeof i === 'number' ?
-                    i : 0;
+                i.replace(/[\$,]/g, '') * 1 :
+                typeof i === 'number' ?
+                i : 0;
             };
 
             // Total over all pages
             total = api
-                .column(4)
-                .data()
-                .reduce(function(a, b) {
-                    return intVal(a) + intVal(b);
-                }, 0);
+            .column(4)
+            .data()
+            .reduce(function(a, b) {
+                return intVal(a) + intVal(b);
+            }, 0);
 
             // Total over this page
             pageTotal = api
-                .column(4, { page: 'current' })
-                .data()
-                .reduce(function(a, b) {
-                    return intVal(a) + intVal(b);
-                }, 0);
+            .column(4, { page: 'current' })
+            .data()
+            .reduce(function(a, b) {
+                return intVal(a) + intVal(b);
+            }, 0);
 
             // Update footer
             $(api.column(4).footer()).html(
                 '$' + pageTotal + ' ( $' + total + ' total)'
-            );
+                );
         }
     });
 
@@ -684,5 +685,8 @@ $(document).ready(function() {
             }
         }
     });
+
+     // style hand
+    $('.dataTables_wrapper select').addClass('form-control-sm');
 
 });

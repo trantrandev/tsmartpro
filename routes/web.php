@@ -28,3 +28,4 @@ Route::get('logout', function ()
 })->name('logout');
 
 Route::get('admin/user/list', [AdminUserController::class, 'show'])->name('user.list');
+Route::get('admin/user/add', [AdminUserController::class, 'add'])->name('user.add');

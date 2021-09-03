@@ -41,7 +41,7 @@
 
 <body>
     <style>
-.pcoded-navbar {position: fixed;}
+    .pcoded-navbar {position: fixed;}
 </style>
 <!-- Pre-loader start -->
 <div class="theme-loader">
@@ -300,12 +300,21 @@
             </div>                 
         </div>
     </div>
+    <div id="styleSelector">
+
+    </div>
 </div>
 </div>
 </div>
 </div>
 </div>
 
+<script>
+ $("input[name='checkall']").click(function() {
+    var checked = $(this).is(':checked');
+    $('.table-checkall tbody tr td input:checkbox').prop('checked', checked);
+}); 
+</script>
 <!-- Required Jquery -->
 <script type="text/javascript" src="{{ asset('bower_components/jquery-ui/js/jquery-ui.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('bower_components/popper.js/js/popper.min.js') }}"></script>
