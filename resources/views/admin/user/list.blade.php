@@ -18,7 +18,7 @@
 					<div class="col-lg-8">
 						<div class="page-header-title">
 							<div class="d-inline">
-								<h4>Users</h4>								 
+								<h4>USERS</h4>								 
 							</div>
 						</div>
 					</div>
@@ -42,8 +42,8 @@
 					<div class="col-sm-12">
 						<div class="card">
 							<div class="card-header">
-								<h5>User List</h5>
-								<button type="button" class="btn btn-primary waves-effect waves-light f-right d-inline-block md-trigger" data-modal="modal-13"> <i class="icofont icofont-plus m-r-5"></i> Add Product
+								<h5>List user</h5>
+								<button type="button" class="btn btn-primary waves-effect waves-light f-right d-inline-block md-trigger" data-modal="modal-13"> <i class="icofont icofont-plus m-r-5"></i> Add User
 								</button>
 							</div>
 							<div class="card-block">
@@ -57,6 +57,7 @@
 												<th>Created date</th>
 												<th>Status</th>
 												<th>Roll</th>
+												<th>Action</th>
 											</tr>
 										</thead>
 										<tbody>
@@ -67,6 +68,10 @@
 												<td>29/12/1998 12:21:12</td>
 												<td>show</td>
 												<td>administrator</td>
+												<td class="text-center">
+													<a href="#" class="p-1"><i class="feather icon-edit-1"  style="font-size:16px; color: #2196f3;"></i></a>
+													<a href="#" class="p-1"><i class="feather icon-trash-2" onclick='return confirm("Are you sure to want to delete it?")' style="font-size:16px;  color:red"></i></a>
+												</td>
 											</tr> 
 										</tbody>
 									</table>
