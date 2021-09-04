@@ -3,7 +3,7 @@
         <div class="pcoded-navigatio-lavel">Main Menu</div>
         <ul class="pcoded-item pcoded-left-item">
             <li class="{{ Route::is('dashboard')?'active':null }}">
-                <a  href="{{ url('admin') }}">
+                <a class="{{ Route::is('dashboard')?'active-bg':null }}"  href="{{ url('admin') }}">
                     <span class="pcoded-micon"><i class="feather icon-home"></i></span>
                     <span class="pcoded-mtext">Dashboard</span>
                 </a>
@@ -121,7 +121,7 @@
             </li>
 
             <li class="pcoded-hasmenu {{ Request::segment(2)=='user'?'pcoded-trigger':null }}" dropdown-icon="style1" subitem-icon="style1">
-                <a href="javascript:void(0)">
+                <a class="{{ Route::is('user.list')?'active-bg':null }}" href="javascript:void(0)">
                     <span class="pcoded-micon"><i class="feather icon-user"></i></span>
                     <span class="pcoded-mtext">Users</span>
                 </a>
